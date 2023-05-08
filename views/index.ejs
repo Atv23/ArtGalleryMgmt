@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/1.css" id="theme-color">
+</head>
+<body style="background-color:black;">
+    
+    <h1 class="xyz">The Art Gallery</h1>
+        <div class="card-columns m-6">
+            <% detailedList.forEach(detailss=>{ %>
+            <div class="card border-primary m-3 float-md-start" style="width: 20%;">
+                <div class="card-header"><b><%= detailss.Title; %></b></div>
+                <div class="card-body text-primary">
+                  <img class="card-img-top" src="<%= detailss.ArtUrl; %>" width="400" height="250" alt="Card image cap">
+                  <h5 class="card-title">By: <%= detailss.artistName; %></h5>
+                  <p>Price: <%=detailss.Price; %> $</p>
+                  <!-- <p>Quantity: <%=detailss.Quantity; %> pcs</p> -->
+                    <p class="card-text"><b>Description:</b><br><%= detailss.Description; %></p>
+                    <!-- <p class="card-box"> <strong><%= detailss.Exhibition; %> </strong></p> -->
+                   <% if(detailss.Exhibition) { %>
+                     <button class="card-button" id="menuProfile" ><b>Buy Now</b></button> 
+                    <% } else { %>
+                        <p id="abc"><strong>Not For Sale</strong></p>
+                    <% } %>
+                </div>
+              </div>
+              <% }) %>
+        </div>
+</body>
+
+</html>
